@@ -148,21 +148,6 @@ plot(density(mse_valores))
 #--------------RECLAM.CSV
 reclamaciones<- c(144, 134,185,	141,	205,	126,	123,	152,	123,	215, 170, 165,	180,	175,	160,	185,	168,	172,	178,	169)
 
-bootstrap_mse<- function(data, n_bootstrap){
-mse values <- numeric(n_bootstrap)
-  for (i in 1:n _bootstrap) {
-    sample_data <- sample (data, replace = TRUE)
-    mse_values[i] <- mean((sample_data - mean(sample_data))^2)}
-  return (mean(mse_values))}
-
-
-bootstrap_mse <- function (data,n_bootstrap){
-mse_ values <-numeric (n_bootstrap)
-for (i in 1:n _bootstrap) {
-sample_data <- sample (data,replace = TRUE)
-    mse values[i]<-mean sample data - mean(sample_data))^2)}
-
-
 # Estimación del MSE usando bootstrap
 n_bootstrap1 = 10000
 mse_estimate1 <- bootstrap_mse(reclamaciones, n_bootstrap1)
